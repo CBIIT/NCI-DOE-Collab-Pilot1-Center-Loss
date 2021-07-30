@@ -111,7 +111,10 @@ explained variance
 ('#labels', (1437,), '#transformed', (1437, 3))
 Done
 ```
-Example plots can be found in ```/code/rnaseq_features_label.*.y.encoded.joined.png```
+Example plots can be found in ```./figures/rnaseq_features_label.*.y.encoded.joined.png```
+
+Here is an example of the encoded features using 3D TSNE plots:
+<img src="../figures/rnaseq_features_label.test.y.encoded.joined.png" alt="drawing" width="400"/> 
 
 
 ### Glossary:
