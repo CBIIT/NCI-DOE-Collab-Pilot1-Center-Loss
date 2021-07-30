@@ -14,3 +14,4 @@ dependencies:
   - tensorflow-gpu=1.8.0
   - tqdm=4.59.0
   - Pillow=5.4.1
+  - requests=2.12.5
