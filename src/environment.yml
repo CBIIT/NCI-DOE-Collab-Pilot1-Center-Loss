@@ -1,0 +1,16 @@
+name: center_loss 
+channels:
+  - anaconda
+  - conda-forge
+  - defaults
+dependencies:
+  - matplotlib=2.2.3
+  - numpy=1.16.2
+  - pandas=0.24.1
+  - python=2.7.16
+  - scikit-learn=0.20.2
+  - scipy=1.2.1
+  - tensorboard=1.8.0
+  - tensorflow-gpu=1.8.0
+  - tqdm=4.59.0
+  - Pillow=5.4.1
