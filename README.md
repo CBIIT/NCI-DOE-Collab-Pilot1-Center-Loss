@@ -24,8 +24,6 @@ This capability provides the following components:
 
 * Scripts to encode the RNAseq expression and visualize the reduced dimension resutls 
 
-### Publication
-Partin, A., Brettin, T., Evrard, Y.A. et al. Learning curves for drug response prediction in cancer cell lines. BMC Bioinformatics 22, 252 (2021). [https://doi.org/10.1186/s12859-021-04163-y](https://doi.org/10.1186/s12859-021-04163-y)
 
 
 ### Technical Details
