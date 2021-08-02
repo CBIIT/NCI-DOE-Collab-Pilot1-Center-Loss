@@ -111,7 +111,7 @@ Done
 ```
 Example plots can be found in ```./figures/rnaseq_features_label.*.y.encoded.joined.png```
 
-Here is an example of the encoded features using 3D TSNE plots for TODO:
+Here is an example of the encoded samples using Principal Component Analysis and 3D TSNE plots with three different [perplexity](https://scikit-learn.org/stable/auto_examples/manifold/plot_t_sne_perplexity.html) values.
 
 <img src="../figures/rnaseq_features_label.test.y.encoded.joined.png" alt="drawing" width="1200"/> 
 
