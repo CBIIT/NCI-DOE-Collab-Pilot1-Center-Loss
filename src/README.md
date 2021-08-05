@@ -3,8 +3,7 @@
 ##### Released: May 27th, 2021
 
 ### Description:
-`CLRNA` is a python package built on Tensoflow to learn new features
-for RNASeq data.
+`CLRNA` is a python package built on Tensoflow to learn new features for RNASeq data.
 
 Predictive modeling of patient tumor growth response to drug treatment is severely limited by a lack of experimental data for training.  Combining experimental data from several studies is an attractive approach, but presents two problems: batch effects and limited data for individual drugs and cell lines. Batch effects are caused by systematic procedural differences among studies, which causes systematic experimental outcome differences. Directly using these experimental results as features for machine learning commonly causes problems when training on one study and testing on another. This severely limits a model’s ability to perform well on new experiments. Even after combining studies, predicting outcomes on new patient tumors remains an open challenge.
 
@@ -52,7 +51,7 @@ expecting around 12642
 ```
 
 ### Training the model  
-To train the model run the following command:
+To train the default model, run the following command:
 ```
 $cd ./src
 $ bash train.sh
@@ -97,11 +96,10 @@ dumping to  ../model/rnaseq_features_label.train.y.encoded
 Done
 ```
 
-Encoded features will be saved to ```/model/```. It will have the same filename as the input except '.encoded' will be appended to the end of the filename e.g., ```rnaseq_features_label.test.y.encoded.npy```.
+Encoded features will be saved to ```./model/```. It will have the same filename as the input except '.encoded' will be appended to the end of the filename e.g., ```rnaseq_features_label.test.y.encoded.npy```.
 
 ### Visualization of results 
-The encoded features handle batch effect which can be seen by producing the plots as seen below 
-
+The encoded features handle batch effect which can be seen by producing the plots as shown below:
 
 ```
 > bash visualize.sh
@@ -121,8 +119,9 @@ Done
 ```
 Example plots can be found in ```./figures/rnaseq_features_label.*.y.encoded.joined.png```
 
-Here is an example of the encoded features using 3D TSNE plots:
-<img src="../figures/rnaseq_features_label.test.y.encoded.joined.png" alt="drawing" width="400"/> 
+Here is an example of the encoded samples using Principal Component Analysis and 3D TSNE plots with three different [perplexity](https://scikit-learn.org/stable/auto_examples/manifold/plot_t_sne_perplexity.html) values.
+
+<img src="../figures/rnaseq_features_label.test.y.encoded.joined.png" alt="drawing" width="1200"/> 
 
 
 ### Glossary:
