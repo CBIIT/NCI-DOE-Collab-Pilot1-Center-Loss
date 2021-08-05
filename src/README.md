@@ -74,6 +74,14 @@ epoch 19
 Optimization Finished!
 Done
 ```
+
+
+### Download a trained model
+To download a trained model instead of training a model, follow these steps:
+1. Create an account on the Model and Data Clearinghouse ([MoDaC](https://modac.cancer.gov)). 
+2. Run the script [./src/utils/download_model.py](./utils/download_model.py). 
+3. When prompted by the training and test scripts, enter your MoDaC credentials.
+
 ### Encoding the samples 
 To use trained model to encode the RNASeq samples, run the following:
 
