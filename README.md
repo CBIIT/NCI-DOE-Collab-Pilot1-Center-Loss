@@ -17,9 +17,9 @@ The new cost function balances the reconstruction performance, with the classifi
 ### Components
 This capability provides the following components:
 * Scripts in this repository: 
- * Scripts to download and process RNA-Seq expression and cell line data. 
- * Script to train the autoencoder model
- * Scripts to encode the RNA-Seq expression and visualize the reduced dimension results 
+    * Scripts to download and process RNA-Seq expression and cell line data. 
+    * Script to train the autoencoder model.
+    * Scripts to encode the RNA-Seq expression and visualize the reduced dimension results. 
 * The trained model in the [CLRNA](https://modac.cancer.gov/searchTab?dme_data_id=NCI-DME-MS01-9815585) asset in the Model and Data Clearinghouse (MoDaC).
 
 ### Technical Details
