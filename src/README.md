@@ -96,7 +96,7 @@ dumping to  ../model/rnaseq_features_label.train.y.encoded
 Done
 ```
 
-Encoded features will be saved to ```./model/```. It will have the same filename as the input except '.encoded' will be appended to the end of the filename such as ```rnaseq_features_label.test.y.encoded.npy```.
+The system saves encoded features to ```./model/```. The system saves the features with the same filename as the input except the system appends '.encoded' to the end of the filename (such as ```rnaseq_features_label.test.y.encoded.npy```).
 
 ### Visualization of results 
 The encoded features handle batch effects which can be seen by producing the plots as shown below:
@@ -117,7 +117,7 @@ explained variance
 ('#labels', (1437,), '#transformed', (1437, 3))
 Done
 ```
-Example plots can be found in ```./figures/rnaseq_features_label.*.y.encoded.joined.png```
+The (./figures)[./figures] folder contains example plots ```rnaseq_features_label.*.y.encoded.joined.png```
 
 Here is an example of the encoded samples using Principal Component Analysis and 3D TSNE plots with three different [perplexity](https://scikit-learn.org/stable/auto_examples/manifold/plot_t_sne_perplexity.html) values.
 
@@ -125,9 +125,9 @@ Here is an example of the encoded samples using Principal Component Analysis and
 
 
 ### Glossary
-**output_folder:** Output directory. Model checkpoints will be saved here.
+**output_folder:** Output directory. The system saves model checkpoints here.
 
-**summary_folder:** Usually the same as output_directory. Model training summary will be saved here.
+**summary_folder:** Usually the same as output_directory. The system saves the model training summary here.
     
 **train_X/valid_X:** Path to RNA-Seq features saved as a numpy file. One row per sample and 17,743 columns per sample. This file is generated in step 1 of the data section.
     
@@ -136,7 +136,7 @@ Here is an example of the encoded samples using Principal Component Analysis and
 **encode_X/encode_y:** Files to be encoded. Follows the same format as training and validation files. Encode_y can be made up classifications.
 
 ### License
-This is distributed under the terms of the MIT license.
+The authors distributed this under the terms of the MIT license.
 
 All new contributions must be made under both the MIT licenses.
 
