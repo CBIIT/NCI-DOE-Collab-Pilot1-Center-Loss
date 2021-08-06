@@ -1,19 +1,19 @@
-## RNA-seq latent featurizer using center loss cost function (CLRNA) v0.1
+## RNA-Seq Latent Featurizer Using Center Loss Cost Function (CLRNA) v0.1
 ##### Authors: Stewart He (he6@llnl.gov), Jonathan E. Allen, Ya Ju Fan
 ##### Released: May 27th, 2021
 
-### Description:
-`CLRNA` is a python package built on Tensoflow to learn new features for RNASeq data.
+### Description
+`CLRNA` is a Python package built on Tensorflow to learn new features for RNA-Seq data.
 
 Predictive modeling of patient tumor growth response to drug treatment is severely limited by a lack of experimental data for training.  Combining experimental data from several studies is an attractive approach, but presents two problems: batch effects and limited data for individual drugs and cell lines. Batch effects are caused by systematic procedural differences among studies, which causes systematic experimental outcome differences. Directly using these experimental results as features for machine learning commonly causes problems when training on one study and testing on another. This severely limits a model’s ability to perform well on new experiments. Even after combining studies, predicting outcomes on new patient tumors remains an open challenge.
 
-We propose a semi-supervised, autoencoder-based, machine learning procedure, which learns a smaller set of gene expression features that are robust to batch effects using background information on a cell line or tissue’s tumor type. We implemented this reduced feature representation and show that the new feature space clusters strongly according to tumor type. This experiment is carried out across multiple studies: CCLE, CTRP, gCSI, GDSC, NCI60, and patient derived tumors. We hypothesize that using a batch effect resistant feature set across studies will improve prediction performance.
+The authors of this model propose a semi-supervised, autoencoder-based, machine learning procedure. This procedure learns a smaller set of gene expression features that are robust to batch effects using background information on a cell line or tissue’s tumor type. The authors of this model implemented this reduced feature representation and show that the new feature space clusters strongly according to tumor type. This experiment is carried out across multiple studies: CCLE, CTRP, gCSI, GDSC, NCI60, and patient derived tumors. The authors of this model hypothesize that using a batch effect resistant feature set across studies will improve prediction performance.
 
-Genomic Data Commons (GDC) gene expression profiles for publicly available human tissues and cell lines from NCI60 and CCLE were processed using the semi-supervised learning procedure. Our autoencoder repurposes the ‘center loss’ (CL) cost function of [Wen et. al.](https://link.springer.com/chapter/10.1007/978-3-319-46478-7_31) to learn a more generalized set of features using the cell line or tissue’s tumor type. Classification is performed by branching network the ‘pinch’ layer of the autoencoder. The ‘pinch’ layer now gets fed into a classification layer as well as the decoder portion of the autoencoder.  
+Genomic Data Commons (GDC) gene expression profiles for publicly available human tissues and cell lines from NCI60 and CCLE were processed using the semi-supervised learning procedure. The autoencoder repurposes the ‘center loss’ (CL) cost function of [Wen et. al.](https://link.springer.com/chapter/10.1007/978-3-319-46478-7_31) to learn a more generalized set of features using the cell line or tissue’s tumor type. Classification is performed by branching network the ‘pinch’ layer of the autoencoder. The ‘pinch’ layer now gets fed into a classification layer as well as the decoder portion of the autoencoder.  
 
-The new cost function balances the reconstruction performance, with the classification and ‘center loss’ performance. Reconstruction performance ensures that the ‘pinch’ layer retains information about original gene expression while classification performance shapes the space so tumors of the same type of close together regardless of the source study. Using the ‘pinch’ layer as new features reduces the number of features from 17,000 genes to approximately 1000 features or as few as 20 features.
+The new cost function balances the reconstruction performance, with the classification and ‘center loss’ performance. Reconstruction performance ensures that the ‘pinch’ layer retains information about original gene expression while classification performance shapes the space so tumors of the same type are close together regardless of the source study. Using the ‘pinch’ layer as new features reduces the number of features from 17,000 genes to approximately 1000 features or as few as 20 features.
 
-The performance of this method is compared with traditional batch correction methods (e.g.  [ComBat](https://academic.oup.com/biostatistics/article/8/1/118/252073?login=true)).  Before applying these methods, individual samples clustered more strongly along study, a property that is not useful in many machine learning applications. We compare the new features from our ‘center loss’ autoencoder and ComBat using Silhouette score, the Calinski – Harabasz index, and the Davies – Bouldin index. All metrics show that using the prosed ‘center loss’ autoencoder features provide a latent space with better clusters than applying ComBat.
+The performance of this method is compared with traditional batch correction methods (such as  [ComBat](https://academic.oup.com/biostatistics/article/8/1/118/252073?login=true)).  Before applying these methods, individual samples clustered more strongly along study, a property that is not useful in many machine learning applications. The authors of this model compare the new features from the ‘center loss’ autoencoder and ComBat using Silhouette score, the Calinski-Harabasz index, and the Davies-Bouldin index. All metrics show that the ‘center loss’ autoencoder features provide a latent space with better clusters than applying ComBat.
 
 ### Setup
 To set up the Python environment needed to generate learning curves:
@@ -35,8 +35,8 @@ Download data that is required to build a tabular dataset. The tabular dataset i
 3. When prompted by the training and test scripts, enter your MoDaC credentials.
 
 
-#### Data Pre-Processing 
-Preprocess the downloaded data into suitable format for CLRNA.
+#### Data Preprocessing 
+To preprocess the downloaded data into suitable format for CLRNA, run the following commands:
 ```
 $cd ./src/ 
 $ python preprocess_ftp_data.py 
@@ -51,7 +51,7 @@ expecting around 12642
 ```
 
 ### Training the model  
-To train the default model, run the following command:
+To train the default model, run the following commands:
 ```
 $cd ./src
 $ bash train.sh
@@ -82,7 +82,7 @@ To download a trained model instead of training a model, follow these steps:
 3. When prompted by the training and test scripts, enter your MoDaC credentials.
 
 ### Encoding the samples 
-To use trained model to encode the RNASeq samples, run the following:
+To use trained model to encode the RNA-Seq samples, run the following commands:
 
 ```
 $ cd ./src/ 
@@ -96,10 +96,10 @@ dumping to  ../model/rnaseq_features_label.train.y.encoded
 Done
 ```
 
-Encoded features will be saved to ```./model/```. It will have the same filename as the input except '.encoded' will be appended to the end of the filename e.g., ```rnaseq_features_label.test.y.encoded.npy```.
+Encoded features will be saved to ```./model/```. It will have the same filename as the input except '.encoded' will be appended to the end of the filename such as ```rnaseq_features_label.test.y.encoded.npy```.
 
 ### Visualization of results 
-The encoded features handle batch effect which can be seen by producing the plots as shown below:
+The encoded features handle batch effects which can be seen by producing the plots as shown below:
 
 ```
 > bash visualize.sh
@@ -124,26 +124,22 @@ Here is an example of the encoded samples using Principal Component Analysis and
 <img src="../figures/rnaseq_features_label.test.y.encoded.joined.png" alt="drawing" width="1200"/> 
 
 
-### Glossary:
+### Glossary
 **output_folder:** Output directory. Model checkpoints will be saved here.
 
-**summary_folder:** Usually the same as output_directory. 
-    Model training summary will be saved here.
+**summary_folder:** Usually the same as output_directory. Model training summary will be saved here.
     
-**train_X/valid_X:** Path to RNA seq features saved as a numpy file. One row
-    per sample 17743 columns per sample. This file is generated in step 1 of the data section.
+**train_X/valid_X:** Path to RNA-Seq features saved as a numpy file. One row per sample and 17,743 columns per sample. This file is generated in step 1 of the data section.
     
-**train_y/valid_y:** Path to tumor features saved as a txt file. One row per
-    sample. Each class should be represented as an integer. e.g 1, 2, 3. This file is generated in step 2 of the data section.
+**train_y/valid_y:** Path to tumor features saved as a txt file. One row per sample. Each class should be represented as an integer, such as 1, 2, 3. This file is generated in step 2 of the data section.
 
-**encode_X/encode_y:** Files to be encoded. Follows the same format as
-    training and validation files. Encode_y can be made up classifications.
+**encode_X/encode_y:** Files to be encoded. Follows the same format as training and validation files. Encode_y can be made up classifications.
 
 ### License
 This is distributed under the terms of the MIT license.
 
 All new contributions must be made under both the MIT licenses.
 
-See LICENSE, COPYRIGHT, and NOTICE for details.
+For details, refer to LICENSE, COPYRIGHT, and NOTICE.
 
 LLNL-CODE-824233
