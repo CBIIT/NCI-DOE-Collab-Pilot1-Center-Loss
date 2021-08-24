@@ -1,7 +1,7 @@
 # NCI-DOE Collaboration Pilot 1: Semi-supervised Feature Learning with Center Loss
 
 ### Description
-The `CLRNA` software provides a semi-supervised, autoencoder-based, machine learning procedure. This procedure learns a smaller set of gene expression features that are resistant to batch effects using background information on a cell line or tissue’s tumor type. The authors of this model implemented this reduced feature representation and show that the new feature space clusters strongly according to tumor type. We carried out experiements across multiple studies: Cancer Cell Line Encyclopedia ([CCLE](https://sites.broadinstitute.org/ccle/)), Cancer Therapeutics Response Portal ([CTRP](https://portals.broadinstitute.org/ctrp.v2.1/)), the Genentech Cell Line Screening Initiative ([gCSI](https://pharmacodb.pmgenomics.ca/datasets/4)), Genomics of Drug Sensitivity in Cancer ([GDSC](https://www.cancerrxgene.org/)), [NCI60](https://discover.nci.nih.gov/cellminer/home.do), and patient derived tumors. We hypothesize that using a batch effect resistant feature set across studies will improve prediction performance.
+The `CLRNA` software provides a semi-supervised, autoencoder-based, machine learning procedure. This procedure learns a smaller set of gene expression features that are resistant to batch effects using background information on a cell line or tissue’s tumor type. The authors of this model implemented this reduced feature representation and show that the new feature space clusters strongly according to tumor type. We carried out experiements across multiple studies: Cancer Cell Line Encyclopedia ([CCLE](https://sites.broadinstitute.org/ccle/)), Cancer Therapeutics Response Portal ([CTRP](https://portals.broadinstitute.org/ctrp.v2.1/)), the Genentech Cell Line Screening Initiative ([gCSI](https://pharmacodb.pmgenomics.ca/datasets/4)), Genomics of Drug Sensitivity in Cancer ([GDSC](https://www.cancerrxgene.org/)), [NCI60](https://discover.nci.nih.gov/cellminer/home.do), and patient derived tumors. The system downloads the data in this example from the [Cancer Drug Response Prediction Dataset](https://modac.cancer.gov/searchTab?dme_data_id=NCI-DME-MS01-8088592) in the Model and Data Clearinghouse (MoDaC). We hypothesize that using a batch effect resistant feature set across studies will improve prediction performance.
 
 ### User Community
 Researchers interested in the following topics:
@@ -20,7 +20,7 @@ This capability provides the following components:
     * Scripts to download and process RNA-Seq expression and cell line data. 
     * Script to train the autoencoder model.
     * Scripts to encode the RNA-Seq expression and visualize the reduced dimension results. 
-* The trained model in the [CLRNA](https://modac.cancer.gov/searchTab?dme_data_id=NCI-DME-MS01-9815585) asset in the Model and Data Clearinghouse (MoDaC).
+* The trained model in the [CLRNA](https://modac.cancer.gov/searchTab?dme_data_id=NCI-DME-MS01-9815585) asset in MoDaC.
 
 ### Technical Details
 Refer to this [README](./src/README.md).
