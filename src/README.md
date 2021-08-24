@@ -7,7 +7,7 @@
 
 Predictive modeling of patient tumor growth response to drug treatment is severely limited by a lack of experimental data for training.  Combining experimental data from several studies is an attractive approach, but presents two problems: batch effects and limited data for individual drugs and cell lines. Batch effects are caused by systematic procedural differences among studies, which causes systematic experimental outcome differences. Directly using these experimental results as features for machine learning commonly causes problems when training on one study and testing on another. This severely limits a model’s ability to perform well on new experiments. Even after combining studies, predicting outcomes on new patient tumors remains an open challenge.
 
-This semi-supervised, autoencoder-based, machine learning procedure learns a smaller set of gene expression features that are resistant to batch effects using background information on a cell line or tissue’s tumor type. The authors of this model implemented this reduced feature representation and show that the new feature space clusters strongly according to tumor type. The authors carried out experiments across multiple studies: Cancer Cell Line Encyclopedia ([CCLE](https://sites.broadinstitute.org/ccle/)), Cancer Therapeutics Response Portal ([CTRP](https://portals.broadinstitute.org/ctrp.v2.1/)), the Genentech Cell Line Screening Initiative ([gCSI](https://pharmacodb.pmgenomics.ca/datasets/4)), Genomics of Drug Sensitivity in Cancer ([GDSC](https://www.cancerrxgene.org/)), [NCI60](https://discover.nci.nih.gov/cellminer/home.do), and patient derived tumors. This method produces features that are resistant to batch effects.
+This semi-supervised, autoencoder-based, machine learning procedure learns a smaller set of gene expression features that are resistant to batch effects using background information on a cell line or tissue’s tumor type. The authors of this model implemented this reduced feature representation and show that the new feature space clusters strongly according to tumor type. The authors carried out experiments across multiple studies: Cancer Cell Line Encyclopedia ([CCLE](https://sites.broadinstitute.org/ccle/)), Cancer Therapeutics Response Portal ([CTRP](https://portals.broadinstitute.org/ctrp.v2.1/)), the Genentech Cell Line Screening Initiative ([gCSI](https://pharmacodb.pmgenomics.ca/datasets/4)), Genomics of Drug Sensitivity in Cancer ([GDSC](https://www.cancerrxgene.org/)), [NCI60](https://discover.nci.nih.gov/cellminer/home.do), and patient derived tumors. The system downloads the data in this example from the [Cancer Drug Response Prediction Dataset](https://modac.cancer.gov/searchTab?dme_data_id=NCI-DME-MS01-8088592) in the Model and Data Clearinghouse (MoDaC). This method produces features that are resistant to batch effects.
 
 The authors processed Genomic Data Commons (GDC) gene expression profiles for publicly available human tissues and cell lines from NCI60 and CCLE were processed using the semi-supervised learning procedure. The autoencoder repurposes the ‘center loss’ (CL) cost function of [Wen et. al.](https://link.springer.com/chapter/10.1007/978-3-319-46478-7_31) to learn a more generalized set of features using the cell line or tissue’s tumor type. Classification is performed by branching the network at the ‘pinch’ layer of the autoencoder. Activations from the 'pinch' are fed forward to the decoder and the classification network. 
 
@@ -28,7 +28,7 @@ To set up the Python environment needed to run the system:
 
 ### Data Download
 Download data and convert it to tabular data that is used by the system to train the CLRNA process
-1. Create an account on the Model and Data Clearinghouse ([MoDaC](https://modac.cancer.gov)). 
+1. Create an account on [MoDaC](https://modac.cancer.gov). 
 2. Run the script [./src/utils/download_data.py](./utils/download_data.py). This script downloads from MoDaC the following data: 
    * RNA-Seq expressions
    * combined_cl_metadata
@@ -87,7 +87,7 @@ Done
 
 ### Download a trained model
 To download a trained model instead of training a model, follow these steps:
-1. Create an account on the Model and Data Clearinghouse ([MoDaC](https://modac.cancer.gov)). 
+1. Create an account on ([MoDaC](https://modac.cancer.gov). 
 2. Run the script [./src/utils/download_model.py](./utils/download_model.py). 
 3. When prompted by the training and test scripts, enter your MoDaC credentials.
 
