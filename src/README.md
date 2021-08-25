@@ -30,8 +30,8 @@ To set up the Python environment needed to run the system:
 Download data and convert it to tabular data that the system uses to train the CLRNA process:
 1. Create an account on [MoDaC](https://modac.cancer.gov). 
 2. Run the script [./src/utils/download_data.py](./utils/download_data.py). This script downloads from MoDaC the following data: 
-   * RNA-Seq expressions
-   * combined_cl_metadata
+   * RNA-Seq expressions: "combined_rnaseq_data" file
+   * Center loss metadata: "combined_cl_metadata" file
 3. When prompted by the training and test scripts, enter your MoDaC credentials.
 
 
@@ -149,7 +149,7 @@ Here is an example of the encoded samples using Principal Component Analysis and
 ### License
 The authors distributed this under the terms of the [MIT license](../LICENSE).
 
-All new contributions must be made under the [MIT license](../LICENSE).
+If you make any new contributions, make them under the [MIT license](../LICENSE).
 
 For details, refer to [LICENSE](../LICENSE), [COPYRIGHT](../COPYRIGHT), and [NOTICE](../NOTICE).
 
