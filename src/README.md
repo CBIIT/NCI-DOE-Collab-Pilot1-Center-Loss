@@ -1,7 +1,4 @@
 ## RNA-Seq Latent Featurizer Using Center Loss Cost Function (CLRNA) v0.1
-##### Authors: Stewart He (he6@llnl.gov), Jonathan E. Allen, Ya Ju Fan
-##### Released: May 27th, 2021
-
 ### Description
 `CLRNA` is a Python package built on Tensorflow to learn new features for RNA-Seq data.
 
@@ -154,3 +151,7 @@ If you make any new contributions, make them under the [MIT license](../LICENSE)
 For details, refer to [LICENSE](../LICENSE), [COPYRIGHT](../COPYRIGHT), and [NOTICE](../NOTICE).
 
 LLNL-CODE-824233
+
+### Document Information
+Authors: Stewart He (he6@llnl.gov), Jonathan E. Allen, Ya Ju Fan
+Released: May 27th, 2021
