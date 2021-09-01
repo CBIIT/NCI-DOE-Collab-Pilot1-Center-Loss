@@ -148,7 +148,7 @@ The authors distributed this under the terms of the [MIT license](../LICENSE).
 
 If you make any new contributions, make them under the [MIT license](../LICENSE).
 
-For details, refer to [LICENSE](../LICENSE), [COPYRIGHT](../COPYRIGHT), and [NOTICE](../NOTICE).
+For details, refer to [LICENSE](../LICENSE) and [NOTICE](../NOTICE).
 
 LLNL-CODE-824233
 
