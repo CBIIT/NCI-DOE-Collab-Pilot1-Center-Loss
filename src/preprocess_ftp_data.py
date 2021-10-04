@@ -7,6 +7,12 @@ import os
 import sklearn.preprocessing as skprep
 import sklearn.model_selection as skms
 
+##This step is included to create the default folder###
+
+main_dir='../data/processed_ftp_data'
+os.mkdir(main_dir)
+
+
 def parse_args():
     '''
     Parse input arguments
